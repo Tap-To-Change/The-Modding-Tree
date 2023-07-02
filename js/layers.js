@@ -33,7 +33,7 @@ addLayer("rp", {
         description: "Increase point gain (based on RP).",
         cost: new Decimal(3),
         effect() {
-            return player[this.layer].points.add(1).pow(0.3)*2
+            return player[this.layer].points.add(1).pow(0.25)*2
         },
         effectDisplay() {return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect 
     }
