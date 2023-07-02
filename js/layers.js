@@ -36,7 +36,18 @@ addLayer("rp", {
             return player[this.layer].points.add(1).pow(0.25)*2
         },
         effectDisplay() {return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect 
-    }
+    },
+        13: {title: "Super Production",
+        description: "Triple your point generation.",
+        cost: new Decimal(8),},
+        14: {title: "Self-Synergy",
+            description: "Increase point gain (based on points).",
+            cost: new Decimal(40),
+            effect() {
+                return player.points.add(1).pow(0.15)*1.5
+            },
+            effectDisplay() {return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
+        }
     }
 }
 )
